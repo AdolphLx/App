@@ -1,7 +1,6 @@
 var myapp=angular.module("myapp",["ionic"]);
-myapp.config(function($stateProvider,$urlRouterProvider,$ionicConfigProvider){
+myapp.config(function($stateProvider,$urlRouterProvider){
     //配置的内容，状态名-{url,template,controllter}
-     $ionicConfigProvider.tabs.position("bottom");
     $stateProvider.state("all_box",{
         url:"/all_box",
         templateUrl:"all_box/all_box.html"
