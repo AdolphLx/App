@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#vode{
+			width: 100%;
+		}
+		#video{
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.list{
+			display: block;
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			font-size: 30px;
+		}
+	</style>
+	<body>
+		<div id="vode">
+			
+		</div>
+	</body>
+	<script src="https://web.ariel-go.com/html7/h5/js/jquery.min.js"></script>
+	<script>
+		$.ajax({
+		    type: "get",
+		    cache: true,
+		    async: true,
+		    url: "https://web.ariel-go.com/html7/h5/json1/7.json",
+		    dataType: "jsonp",
+		    jsonpCallback: 'jsonp',
+		    success: function (json) {
+			   console.log(json[0].data)
+			   var vode=json[0].data;
+			   for(var i=0; i<vode.length; i++){
+				   var vode_src=json[0].videourl+vode[i].video;
+				   var img_src=json[0].videourl+vode[i].pic;
+// 				    $("#vode").append(
+// 				    '<video id="video" controls poster="'+img_src+'">'+
+// 				    '<source src="'+vode_src+'">'+
+// 				    '</video>'
+// 				   )
+				    $("#vode").append(
+				      '<div class="list">'+vode_src+'</div>'
+				   )
+			   }
+			   $(".list").click(function(){
+				   // window.location.href = $(this).text();
+			   })
+		    }
+		});
+	</script>
+</html>
