@@ -45,18 +45,18 @@
 			   for(var i=0; i<vode.length; i++){
 				   var vode_src=json[0].videourl+vode[i].video;
 				   var img_src=json[0].videourl+vode[i].pic;
-// 				    $("#vode").append(
-// 				    '<video id="video" controls poster="'+img_src+'">'+
-// 				    '<source src="'+vode_src+'">'+
-// 				    '</video>'
-// 				   )
 				    $("#vode").append(
-				      '<div class="list">'+vode_src+'</div>'
+				    '<video id="video" controls poster="'+img_src+'">'+
+				    '<source src="'+vode_src+'">'+
+				    '</video>'
 				   )
+// 				    $("#vode").append(
+// 				      '<div class="list">'+vode_src+'</div>'
+// 				   )
 			   }
-			   $(".list").click(function(){
-				   // window.location.href = $(this).text();
-			   })
+// 			   $(".list").click(function(){
+// 				   // window.location.href = $(this).text();
+// 			   })
 		    }
 		});
 	</script>
